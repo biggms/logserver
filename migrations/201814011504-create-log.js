@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('Logs', {
+        return queryInterface.createTable('Log', {
             id: {
                 type: Sequelize.UUID,
                 primaryKey: true,
@@ -16,7 +16,11 @@ module.exports = {
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE
-            }
+            },
+            revision: {
+                type: Sequelize.INTEGER,
+                defaultValue: 0
+            },
         });
     },
     down: (queryInterface, Sequelize) => {

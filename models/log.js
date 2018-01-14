@@ -6,6 +6,7 @@ module.exports = (sequelize, DataTypes) => {
             id: {type: DataTypes.UUID, primaryKey: true, defaultValue: DataTypes.UUIDV4},
             message: {type: DataTypes.STRING},
             level: {type: DataTypes.ENUM, values: ['error', 'warn', 'info', 'verbose', 'debug', 'silly']},
+            revision: {type: DataTypes.INTEGER, defaultValue: 0}
         }
     );
 
